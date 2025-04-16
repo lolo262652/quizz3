@@ -1,0 +1,43 @@
+body.rotate180 {
+  transform: rotate(180deg);
+}
+
+/* Remettre à l'endroit tout ce qui doit rester lisible */
+body.rotate180 .question-card,
+body.rotate180 .question-card *,
+body.rotate180 .timer,
+body.rotate180 .theme,
+body.rotate180 .question,
+body.rotate180 .choices,
+body.rotate180 .actions,
+body.rotate180 .main-title,
+body.rotate180 h1,
+body.rotate180 h2,
+body.rotate180 input,
+body.rotate180 select,
+body.rotate180 textarea,
+body.rotate180 button,
+body.rotate180 label,
+body.rotate180 .choices button {
+  transform: rotate(0deg);
+}
+
+/* Remettre à l'endroit tout ce qui doit rester lisible */
+body.rotate180 .question-card,
+body.rotate180 .question-card *,
+body.rotate180 .timer,
+body.rotate180 .theme,
+body.rotate180 .question,
+body.rotate180 .choices,
+body.rotate180 .actions,
+body.rotate180 .main-title,
+body.rotate180 h1,
+body.rotate180 h2,
+body.rotate180 input,
+body.rotate180 select,
+body.rotate180 textarea,
+body.rotate180 button,
+body.rotate180 label,
+body.rotate180 .choices button {
+  transform: rotate(0deg);
+}

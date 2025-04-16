@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #161b33 0%, #1ec8e7 100%);
+  color: #fff;
+  min-height: 100vh;
+  letter-spacing: 0.03em;
+}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1, h2, h3 {
+  font-family: 'Press Start 2P', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 8px #1ec8e7, 0 0 16px #4f8cff;
+  letter-spacing: 0.07em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.App {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: rgba(20, 25, 50, 0.95);
+  border-radius: 26px;
+  box-shadow: 0 4px 32px #1ec8e799, 0 0 0 4px #4f8cff44;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border: 2px solid #1ec8e7;
+  position: relative;
+  overflow: hidden;
+}
+
+button {
+  background: linear-gradient(90deg, #1ec8e7 0%, #4f8cff 100%);
+  color: #fff;
+  border: 2px solid #fff3;
+  border-radius: 12px;
+  padding: 0.9em 2em;
+  font-size: 1.1em;
+  margin: 0.7em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-weight: 700;
+  box-shadow: 0 0 8px #1ec8e7cc, 0 2px 12px #4f8cff55;
+  text-shadow: 0 1px 2px #000a;
+  letter-spacing: 0.05em;
+}
+button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #4f8cff 0%, #1ec8e7 100%);
+  transform: translateY(-3px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 16px #1ec8e7, 0 4px 24px #4f8cff77;
+}
+button:active:not(:disabled) {
+  transform: scale(0.98) rotate(1deg);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #1ec8e7, #4f8cff);
+  transform: translateY(-2px) scale(1.04);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-joueur, .themes-select {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+.form-joueur label, .themes-select label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+.form-joueur input, .form-joueur select {
+  padding: 0.4em;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-top: 0.2em;
+}
+
+.themes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+.themes-list label {
+  background: linear-gradient(90deg, #fff 60%, #eaf2ff 100%);
+  color: #232857;
+  border-radius: 12px;
+  padding: 0.7em 1.3em;
+  cursor: pointer;
+  border: 2px solid #4f8cff44;
+  font-family: 'Press Start 2P', 'Segoe UI', Arial, sans-serif;
+  font-size: 1em;
+  box-shadow: 0 0 8px #1ec8e722;
+  transition: border 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-shadow: none;
+}
+.themes-list label.selected {
+  border: 2px solid #1ec8e7;
+  background: linear-gradient(90deg, #1ec8e7 10%, #4f8cff 90%);
+  color: #232857;
+  box-shadow: 0 0 12px #1ec8e7cc, 0 0 0 2px #4f8cff55;
+}
+.themes-list label.selected:active {
+  background: linear-gradient(90deg, #4f8cff 0%, #1ec8e7 100%);
+  box-shadow: 0 0 24px #1ec8e7, 0 0 0 3px #4f8cff;
+  color: #fff;
+  border-color: #fff;
+}
+.themes-list label:hover:not(.selected) {
+  background: linear-gradient(90deg, #eaf2ff 60%, #4f8cff22 100%);
+  color: #161b33;
+  border-color: #4f8cff;
+  box-shadow: 0 0 12px #4f8cff77;
+}
+.themes-list label.selected {
+  border: 2px solid #4f8cff;
+  background: #eaf2ff;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-card {
+  background: linear-gradient(135deg, #232857 0%, #243a5a 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #1ec8e799, 0 0 0 2px #4f8cff55;
+  padding: 2em 1.5em;
+  margin-top: 1.2em;
+  width: 100%;
+  max-width: 540px;
+  border: 2px solid #1ec8e7;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.question-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  box-shadow: 0 0 32px 8px #1ec8e744 inset;
+}
+.theme {
+  font-size: 1.05em;
+  color: #1ec8e7;
+  margin-bottom: 0.6em;
+}
+.question {
+  font-size: 1.15em;
+  margin-bottom: 1.2em;
+  font-weight: 600;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-bottom: 1em;
+}
+.choices button {
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(90deg, #232857 0%, #1ec8e7 100%);
+  color: #fff;
+  border: 2px solid #4f8cff77;
+  padding: 0.85em 1.2em;
+  border-radius: 10px;
+  font-size: 1.05em;
+  transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.18s;
+  box-shadow: 0 0 8px #1ec8e7cc;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+}
+.choices button.selected {
+  background: linear-gradient(90deg, #1ec8e7 0%, #4f8cff 100%);
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 0 0 16px #1ec8e7, 0 2px 12px #4f8cff77;
+}
+.choices button.bonne-reponse {
+  background: linear-gradient(90deg, #4fff8c 0%, #1ec8e7 100%);
+  color: #232857;
+  border: 2px solid #4fff8c;
+}
+.choices button.mauvaise-reponse {
+  background: linear-gradient(90deg, #ff4f8c 0%, #ff8c1e 100%);
+  color: #fff;
+  border: 2px solid #ff4f8c;
+  text-shadow: 0 0 2px #000a;
+}
+.choices button:hover:not(:disabled) {
+  filter: brightness(1.2) drop-shadow(0 0 8px #1ec8e7);
+  transform: scale(1.04) rotate(-2deg);
+  z-index: 2;
+}
+.choices button.selected {
+  background: #1ec8e7;
+  color: #fff;
+  border: 2px solid #4f8cff;
+}
+.choices button.bonne-reponse {
+  background: #7be881;
+  color: #106a1e;
+  border: 2px solid #1ec8e7;
+}
+.choices button.mauvaise-reponse {
+  background: #ffb2b2;
+  color: #a10000;
+  border: 2px solid #ff6464;
+}
+.actions {
+  text-align: center;
+  margin-top: 1em;
+}
+.timer {
+  font-size: 1.1em;
+  color: #4f8cff;
+  text-align: right;
+  margin-bottom: 0.7em;
+}
+.result-correct {
+  color: #1ec8e7;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.result-wrong {
+  color: #ff6464;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.resultats {
+  margin-top: 2em;
+}
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-bottom: 1.5em;
+}
+.badge {
+  background: #eaf2ff;
+  color: #4f8cff;
+  border-radius: 8px;
+  padding: 0.2em 0.8em;
+  font-weight: 600;
+  margin-right: 0.5em;
+}
+.badge-winner {
+  background: #7be881;
+  color: #106a1e;
+  margin-left: 0.6em;
+}
+.gagnant {
+  font-size: 1.12em;
+  font-weight: bold;
+}
+.egalite {
+  color: #ffb700;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 0.7em;
+}
+.details {
+  margin-top: 2em;
+}
+.reponses-joueur {
+  margin-bottom: 1.5em;
+}
+.reponses-joueur ul {
+  list-style: none;
+  padding: 0;
+}
+.reponses-joueur li {
+  margin-bottom: 0.7em;
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  background: #f3f6fc;
+  font-size: 1em;
+}
+.reponses-joueur li.bonne {
+  background: #e7ffe7;
+  color: #107a1e;
+}
+.reponses-joueur li.mauvaise {
+  background: #fff2f2;
+  color: #a10000;
+}
+
+.error {
+  color: #ff6464;
+  background: #fff2f2;
+  border: 1px solid #ffb2b2;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  margin: 0.7em 0;
+  font-weight: 600;
+}
+
+/* Loader */
+.Loader, .loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  font-size: 1.3em;
+  color: #4f8cff;
+}
+
+@media (max-width: 650px) {
+  .App {
+    max-width: 99vw;
+    padding: 1.2rem 0.2rem;
+  }
+  .question-card {
+    padding: 1em;
+  }
+}

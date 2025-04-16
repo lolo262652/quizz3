@@ -1,0 +1,4 @@
+# Netlify configuration for React app
+[build]
+  command = "npm run build"
+  publish = "build"
